@@ -2,70 +2,9 @@ import tkinter as tk
 from tkinter import messagebox
 import threading
 
-# fimport psutil
+
 import winsound
 import time
-
-
-import psutil
-import os
-import json
-
-# APP_NAME = "battery_alert"
-# def play_alert_sound(duration_ms):
-#     freq = 1000
-#     winsound.Beep(freq, duration_ms)
-
-# def monitor_battery(config):
-#     low_triggered = False
-#     high_triggered = False
-
-#     while True:
-#         battery = psutil.sensors_battery()
-#         percent = battery.percent
-#         plugged = battery.power_plugged
-#         print(f"Battery percent: {percent}, Plugged in: {plugged}")
-
-
-#         if not plugged and percent <= config["low_threshold"]:
-#             print(f"Low battery alert: {percent}%")
-#             if not low_triggered:
-#                 play_alert_sound(config["beep_duration"])
-#                 low_triggered = True
-#         else:
-#             low_triggered = False
-
-#         if plugged and percent >= config["high_threshold"]:
-#             if not high_triggered:
-#                 play_alert_sound(config["beep_duration"])
-#                 high_triggered = True
-#         else:
-#             high_triggered = False
-
-#         time.sleep(10)
-
-
-# def get_config_path():
-#     local_appdata = os.getenv("LOCALAPPDATA")
-#     config_dir = os.path.join(local_appdata, APP_NAME)
-#     os.makedirs(config_dir, exist_ok=True)
-#     return os.path.join(config_dir, "settings.json")
-
-# def load_config():
-#     config_path = get_config_path()
-#     if os.path.exists(config_path):
-#         with open(config_path, 'r') as f:
-#             return json.load(f)
-#     return {
-#         "low_threshold": 20,
-#         "high_threshold": 80,
-#         "beep_duration": 1000
-#     }
-
-# def save_config(config):
-#     config_path = get_config_path()
-#     with open(config_path, 'w') as f:
-#         json.dump(config, f)
 
 
 from services.config import load_config, save_config
